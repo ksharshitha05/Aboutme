@@ -1,0 +1,1011 @@
+/* =========================================================
+   K S HARSHITHA - PERSONAL PORTFOLIO
+   Modern Dark Developer Theme
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET & VARIABLES
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #080b14;
+    --bg-light: #101522;
+    --card: #111827;
+    --card-hover: #172033;
+
+    --primary: #7c3aed;
+    --secondary: #06b6d4;
+    --accent: #a78bfa;
+
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.09);
+
+    --gradient: linear-gradient(
+        135deg,
+        #7c3aed,
+        #06b6d4
+    );
+
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   2. GENERAL
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(124, 58, 237, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(6, 182, 212, 0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   3. TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* =========================================================
+   4. HEADER / HERO
+   ========================================================= */
+
+header {
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 5rem 1.5rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.18),
+            rgba(6, 182, 212, 0.08)
+        );
+}
+
+
+/* Decorative circle - left */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(124, 58, 237, 0.15);
+
+    top: -120px;
+
+    left: -100px;
+
+    filter: blur(20px);
+
+    animation: floatingCircle 6s ease-in-out infinite;
+}
+
+
+/* Decorative circle - right */
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(6, 182, 212, 0.12);
+
+    bottom: -150px;
+
+    right: -100px;
+
+    filter: blur(20px);
+
+    animation: floatingCircle 7s ease-in-out infinite reverse;
+}
+
+
+/* =========================================================
+   5. PROFILE IMAGE
+   ========================================================= */
+
+header img {
+    width: 170px;
+
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid transparent;
+
+    background:
+        linear-gradient(var(--bg), var(--bg)) padding-box,
+        var(--gradient) border-box;
+
+    box-shadow:
+        0 0 30px rgba(124, 58, 237, 0.45),
+        0 0 70px rgba(6, 182, 212, 0.15);
+
+    margin-bottom: 1.5rem;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation: profileAppear 1.2s ease-out;
+}
+
+header img:hover {
+    transform: scale(1.07) rotate(2deg);
+
+    box-shadow:
+        0 0 40px rgba(124, 58, 237, 0.65),
+        0 0 80px rgba(6, 182, 212, 0.25);
+}
+
+
+/* =========================================================
+   6. NAME - ELEGANT FONT & ANIMATION
+   ========================================================= */
+
+header h1 {
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(3rem, 7vw, 5rem);
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    margin-bottom: 0.5rem;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: nameAppear 1.4s ease-out forwards;
+
+    transition:
+        transform 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+
+/* Name hover */
+
+header h1:hover {
+    transform: scale(1.03);
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   7. NAME ENTRANCE ANIMATION
+   ========================================================= */
+
+@keyframes nameAppear {
+
+    0% {
+        opacity: 0;
+
+        transform: translateY(40px);
+
+        letter-spacing: 8px;
+    }
+
+    60% {
+        opacity: 0.8;
+
+        transform: translateY(-5px);
+
+        letter-spacing: 3px;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+
+        letter-spacing: 2px;
+    }
+}
+
+
+/* =========================================================
+   8. PROFILE IMAGE ANIMATION
+   ========================================================= */
+
+@keyframes profileAppear {
+
+    0% {
+        opacity: 0;
+
+        transform: scale(0.7);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   9. DECORATIVE CIRCLE ANIMATION
+   ========================================================= */
+
+@keyframes floatingCircle {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(25px, 20px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* =========================================================
+   10. TAGLINE
+   ========================================================= */
+
+header p {
+    margin-top: 0.8rem;
+
+    color: var(--muted);
+
+    font-size: clamp(1rem, 2vw, 1.25rem);
+
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: taglineAppear 1.8s ease-out;
+}
+
+
+@keyframes taglineAppear {
+
+    0% {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   11. NAVIGATION
+   ========================================================= */
+
+nav {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 1.4rem;
+
+    padding: 1rem 1.5rem;
+
+    background: rgba(8, 11, 20, 0.82);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+nav a {
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 2px;
+
+    left: 50%;
+
+    bottom: -6px;
+
+    background: var(--gradient);
+
+    transition: all 0.3s ease;
+
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    color: var(--text);
+
+    transform: translateY(-2px);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   12. MAIN
+   ========================================================= */
+
+main {
+    width: min(1100px, 92%);
+
+    margin: auto;
+
+    padding: 4rem 0;
+}
+
+
+/* =========================================================
+   13. SECTIONS
+   ========================================================= */
+
+section {
+    margin-bottom: 2rem;
+
+    padding: 2.5rem;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 24, 39, 0.95),
+            rgba(15, 23, 42, 0.85)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(124, 58, 237, 0.08);
+
+    top: -50px;
+
+    right: -50px;
+}
+
+section:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   14. HEADINGS
+   ========================================================= */
+
+section h2 {
+    font-size: 2rem;
+
+    margin-bottom: 1.5rem;
+
+    color: var(--text);
+
+    position: relative;
+
+    display: inline-block;
+}
+
+section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55%;
+
+    height: 3px;
+
+    margin-top: 0.4rem;
+
+    border-radius: 10px;
+
+    background: var(--gradient);
+}
+
+section h3 {
+    color: var(--accent);
+
+    font-size: 1.2rem;
+
+    margin: 1rem 0 0.5rem;
+}
+
+section p {
+    color: var(--muted);
+
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   15. SKILLS
+   ========================================================= */
+
+#skills ul {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.2rem;
+}
+
+#skills li {
+    padding: 1.5rem;
+
+    border-radius: 14px;
+
+    background: var(--bg-light);
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-7px);
+
+    background: var(--card-hover);
+
+    border-color: rgba(124, 58, 237, 0.45);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+#skills li h3 {
+    margin-top: 0;
+
+    color: var(--secondary);
+
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   16. PROJECTS
+   ========================================================= */
+
+#projects article {
+    padding: 1.8rem;
+
+    margin-bottom: 1.2rem;
+
+    background: var(--bg-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    border-left: 4px solid var(--primary);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+#projects article:hover {
+    transform: translateX(8px);
+
+    background: var(--card-hover);
+
+    border-left-color: var(--secondary);
+}
+
+#projects article:last-child {
+    margin-bottom: 0;
+}
+
+#projects article h3 {
+    color: var(--text);
+
+    font-size: 1.35rem;
+}
+
+#projects article p {
+    margin-top: 0.6rem;
+}
+
+#projects a {
+    color: var(--secondary);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+#projects a:hover {
+    color: var(--accent);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   17. MY INTERESTS
+   ========================================================= */
+
+#interests ul {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+}
+
+#interests li {
+    padding: 1rem 1.2rem;
+
+    background: var(--bg-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--muted);
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#interests li::before {
+    content: "✦";
+
+    color: var(--secondary);
+
+    margin-right: 0.7rem;
+}
+
+#interests li:hover {
+    transform: translateY(-4px);
+
+    color: var(--text);
+
+    border-color: var(--secondary);
+}
+
+
+/* =========================================================
+   18. GOALS & HOBBIES
+   ========================================================= */
+
+#goals ul {
+    list-style: none;
+
+    padding: 0;
+}
+
+#goals li {
+    margin-bottom: 1rem;
+
+    padding: 1rem;
+
+    background: var(--bg-light);
+
+    border-radius: 10px;
+
+    border-left: 3px solid var(--secondary);
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   19. ONLINE LINKS
+   ========================================================= */
+
+#links p {
+    margin-bottom: 1rem;
+}
+
+#links a {
+    display: inline-block;
+
+    padding: 0.7rem 1.2rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    background: var(--bg-light);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+#links a:hover {
+    transform: translateY(-3px);
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================================
+   20. CONTACT FORM
+   ========================================================= */
+
+form {
+    max-width: 700px;
+}
+
+form p {
+    margin-bottom: 1.3rem;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #0b1120;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--secondary);
+
+    box-shadow:
+        0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* Submit button */
+
+button {
+    border: none;
+
+    padding: 0.9rem 1.8rem;
+
+    border-radius: 10px;
+
+    background: var(--gradient);
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(124, 58, 237, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(124, 58, 237, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   21. FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 2.5rem 1rem;
+
+    background: #05070d;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+}
+
+footer p {
+    margin-bottom: 0.7rem;
+}
+
+footer a {
+    color: var(--accent);
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+
+/* =========================================================
+   22. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        min-height: 80vh;
+
+        padding: 4rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2.7rem;
+    }
+
+    header img {
+        width: 140px;
+
+        height: 140px;
+    }
+
+    nav {
+        gap: 0.8rem;
+
+        padding: 0.9rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    main {
+        width: 94%;
+
+        padding: 2rem 0;
+    }
+
+    section {
+        padding: 1.7rem;
+    }
+
+    #skills ul,
+    #interests ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   23. SMALL MOBILE SCREENS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    header img {
+        width: 120px;
+
+        height: 120px;
+    }
+
+    nav {
+        position: relative;
+
+        gap: 0.6rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 1.3rem;
+
+        border-radius: 14px;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    #projects article {
+        padding: 1.3rem;
+    }
+}
+
+
+/* =========================================================
+   END OF STYLE SHEET
+   ========================================================= */
