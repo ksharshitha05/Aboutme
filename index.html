@@ -271,90 +271,61 @@
 
 
         <!-- ================= CONTACT FORM ================= -->
-<section id="contact">
+        <section id="contact">
 
-    <h2>Contact Me</h2>
+            <h2>Contact Me</h2>
 
-    <form
-        action="https://api.web3forms.com/submit"
-        method="POST"
-    >
+            <form action="#" method="post">
 
-        <!-- Web3Forms API Key -->
-        <input
-            type="hidden"
-            name="access_key"
-            value="<form action="8cbabd56-7674-4cf6-a126-732d91a3013d">
-       
-        
-    </form>"
-        >
+                <p>
+                    <label for="name">Name:</label><br>
 
-        <!-- Subject of the email -->
-        <input
-            type="hidden"
-            name="subject"
-            value="New Message from K S Harshitha Portfolio"
-        >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </p>
 
-        <!-- From name -->
-        <input
-            type="hidden"
-            name="from_name"
-            value="K S Harshitha Portfolio"
-        >
+                <p>
+                    <label for="email">Email:</label><br>
 
-        <!-- Name -->
-        <p>
-            <label for="name">Name:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </p>
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-            >
-        </p>
+                <p>
+                    <label for="message">Message:</label><br>
 
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="40"
+                        placeholder="Write your message here"
+                        required
+                    ></textarea>
+                </p>
 
-        <!-- Email -->
-        <p>
-            <label for="email">Email:</label>
+                <p>
+                    <button type="submit">
+                        Send Message
+                    </button>
+                </p>
 
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-            >
-        </p>
+            </form>
 
+        </section>
 
-        <!-- Message -->
-        <p>
-            <label for="message">Message:</label>
+    </main>
 
-            <textarea
-                id="message"
-                name="message"
-                placeholder="Write your message here..."
-                required
-            ></textarea>
-        </p>
-
-
-        <!-- Submit -->
-        <p>
-            <button type="submit">
-                Send Message
-            </button>
-        </p>
-
-    </form>
-
-</section>
 
     <!-- ================= FOOTER ================= -->
     <footer>
